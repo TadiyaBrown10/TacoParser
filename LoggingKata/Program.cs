@@ -58,26 +58,31 @@ namespace LoggingKata
             for (int i = 0; i < locations.Length; i++)
             {
                 var locA = locations[i];
+
                 var corA = new GeoCoordinate();
                 corA.Latitude = locA.Location.Latitude;
                 corA.Longitude = locA.Location.Longitude;
 
 
 
-                for( int j = 0; j < locations.Length; i++)
+                for( int j = 0; j < locations.Length; j++)
                 {
                     var locB = locations[j];
+
                     var corB = new GeoCoordinate();
                     corB.Latitude = locB.Location.Latitude;
                     corB.Longitude = locB.Location.Longitude;
 
                     if(corA.GetDistanceTo(corB) > distance)
                     {
-                        distance = corA.GetDistanceTo(corB);
+                       distance = corA.GetDistanceTo(corB);
 
                         tacoBell1 = locA;
                         tacoBell2 = locB;
                     }
+
+
+
 
                 }
 
